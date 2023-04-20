@@ -1,0 +1,161 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<script src="https://use.fontawesome.com/your-embed-code.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<div
+  class="resume container"
+  id="content"
+  #content
+  *ngFor="let u of data; let i = index"
+>
+  <div class="resume_left">
+    <div class="resume_content">
+      <div class="resume_item resume_info">
+        <div class="title">
+          <p class="bold">{{ u.firstname }} {{ u.lastname }}</p>
+          <p class="regular">{{ u.current_position }}</p>
+        </div>
+        <ul>
+          <li>
+            <div>
+              <i class="fa">&#xf015;</i>
+            </div>
+            <div class="data ml-3">
+              {{ u.address }}
+            </div>
+          </li>
+          <li>
+            <div>
+              <i class="fa">&#xf095;</i>
+            </div>
+            <div class="data">
+              {{ u.number }}
+            </div>
+          </li>
+          <li>
+            <div>
+              <i class="fa">&#xf0e0;</i>
+            </div>
+            <div class="data">
+              {{ u.email }}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="resume_item resume_skills">
+        <div class="title">
+          <p class="bold">skill's</p>
+        </div>
+        <ul *ngFor="let uu of u.skills; let i = index">
+          <li>
+            <div class="skill_name ml-3">
+              {{ uu.skillname }}
+            </div>
+            <div class="skill_progress">
+              <span *ngIf="uu.ratings == 4" style="width: 80%"></span>
+              <span *ngIf="uu.ratings == 5" style="width: 100%"></span>
+              <span *ngIf="uu.ratings == 3" style="width: 60%"></span>
+              <span *ngIf="uu.ratings == 2" style="width: 40%"></span>
+              <span *ngIf="uu.ratings == 1" style="width: 20%"></span>
+            </div>
+            <div class="skill_per">{{ uu.ratings }}</div>
+          </li>
+        </ul>
+      </div>
+      <div class="resume_item resume_social">
+        <div class="title">
+          <p class="bold">Social</p>
+        </div>
+        <ul *ngFor="let uu of u.social">
+          <li>
+            <div>
+              <span *ngIf="uu.medianame == 'LinkedIn'">
+                <i class="fa">&#xf08c;</i>
+              </span>
+              <span *ngIf="uu.medianame == 'Github'">
+                <i class="fa">&#xf09b;</i>
+              </span>
+              <span *ngIf="uu.medianame == 'Twitter'">
+                <i class="fa">&#xf099;</i>
+              </span>
+              <span *ngIf="uu.medianame == 'Facebook'">
+                <i class="fa">&#xf09a;</i>
+              </span>
+            </div>
+            <div class="data">
+              <p class="semi-bold">{{ uu.medianame }}</p>
+              <p>{{ uu.link }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="resume_right">
+    <div class="resume_item resume_about">
+      <div class="title">
+        <p class="bold">Summary</p>
+      </div>
+      <p>{{ u.summary }}</p>
+    </div>
+    <div class="resume_item resume_work">
+      <div class="title">
+        <p class="bold">Work Experience</p>
+      </div>
+      <ul>
+        <li *ngFor="let exp of u.experience">
+          <div class="date">{{ exp.fromDate }} To {{ exp.toDate }}</div>
+          <div class="info">
+            <p class="semi-bold">
+              Organisation Name is {{ exp.organisationName }}
+            </p>
+            <p class="semi-bold">{{ exp.current_position }}</p>
+            <p>Worked on technologies like {{ exp.technologies }}</p>
+            <p>Current Ctc {{ exp.current_ctc }}</p>
+            <P>Expected Ctc {{ exp.expected_ctc }}</P>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="resume_item resume_education">
+      <div class="title">
+        <p class="bold">Education</p>
+      </div>
+      <ul>
+        <li *ngFor="let edc of u.education">
+          <div class="date">{{ edc.edcFromdate }} To {{ edc.edcTodate }}</div>
+          <div class="info">
+            <p class="semi-bold">
+              {{ edc.courseName }} ({{ edc.universityName }})
+            </p>
+            <p>{{ edc.collegeName }}</p>
+            <p>OverAll Percentage :{{ edc.percentage }} %</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="resume_item resume_education">
+      <div class="title">
+        <p class="bold">Project</p>
+      </div>
+      <ul>
+        <li *ngFor="let prj of u.project">
+          <div class="date">{{ prj.fromDate }} To {{ prj.toDate }}</div>
+          <div class="info">
+            <p>Team Size is {{ prj.team_size }}</p>
+            <p>Project Duration is {{ prj.duration }}</p>
+            <p class="semi-bold">{{ prj.project_title }}</p>
+            <p>Project Technologies : {{ prj.project_technology }}</p>
+            <p>Description :{{ prj.project_description }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <button type="submit" class="btn p-2" (click)="makePdf()">Download</button>
+</div>

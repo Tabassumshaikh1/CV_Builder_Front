@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-light color">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div>
+      <img
+        class="w-50"
+        src="https://www.cakeresume.com/_next/static/media/cakeresume.e1c03867.svg"
+      />
+    </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 navigate"></ul>
+      <div class="row d-flex justify-content-center">
+        <div class="col" *ngIf="islogin === false">
+          <button class="btn mt-2 p-2" type="submit" routerLink="/login">
+            Login
+          </button>
+        </div>
+        <div class="col mr-5" *ngIf="islogin === false">
+          <button class="btn mt-2 p-2 mr-5" type="submit" routerLink="/regis">
+            Register
+          </button>
+        </div>
+        <div class="col mr-5" *ngIf="islogin === true">
+          <button
+            class="btn mt-2 p-2 mr-5 h-75"
+            mat-flat-button
+            #ddTrigger="matMenuTrigger"
+            [matMenuTriggerFor]="dd"
+          >
+            <mat-icon class="icon-display">account_circle</mat-icon>
+          </button>
+          <!-- <button class="btn mt-2 p-2 mr-5" type="submit" routerLink="/">Profile</button> -->
+        </div>
+
+        <mat-menu #dd="matMenu" [overlapTrigger]="false">
+          <div (click)="cancelClick($event)" class="dropdown">
+            <mat-list role="list">
+              <mat-list-item role="listitem">{{ userdata.name }}</mat-list-item>
+              <mat-list-item role="listitem">{{
+                userdata.email
+              }}</mat-list-item>
+              <mat-list-item role="listitem">{{
+                userdata.contactNumber
+              }}</mat-list-item>
+            </mat-list>
+
+            <button
+              type="submit"
+              class="btn w-auto text-center"
+              color="accent"
+              (click)="logout()"
+            >
+              Logout
+            </button>
+          </div>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</nav>
+<hr />

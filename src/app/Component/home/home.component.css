@@ -1,0 +1,25 @@
+/* .btn{
+    
+    color: whitesmoke;
+    /* margin-left: 90vh;
+    height: 10vh; */
+.btn {
+  background-color: #13ab67;
+  border: none;
+}
+
+.imgs {
+  margin-left: 20vh;
+}
+
+.cardimg {
+  width: 8vh;
+  margin: 3vh;
+}
+.cardimgs {
+  border-radius: 50%;
+}
+.Footer_footer__Bg7Ch {
+  color: #fff;
+  background-color: #454d4a;
+}

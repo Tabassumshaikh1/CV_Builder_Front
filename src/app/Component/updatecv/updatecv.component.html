@@ -1,0 +1,622 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<script src="https://use.fontawesome.com/your-embed-code.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<div>
+  <div class="row">
+    <div class="col m-3">
+      <div>
+        <h1 class="text-center mb-5">Update Resume From Here....</h1>
+        <form [formGroup]="myForm" *ngIf="status === true">
+          <div class="row d-flex justify-content-around">
+            <div class="col mr-4">
+              <h4>1. Basic Information</h4>
+              <div class="example-container">
+                <mat-form-field
+                  appearance="outline"
+                  class="example-full-width m-2 mb-1"
+                >
+                  <input
+                    matInput
+                    placeholder="First Name"
+                    formControlName="firstname"
+                    [ngModel]="formobj.firstname"
+                  />
+                  <span
+                    class="form-control is-invalid"
+                    *ngIf="
+                      (fdata['firstname'].invalid &&
+                        fdata['firstname'].touched) ||
+                      submit ||
+                      submit
+                    "
+                  >
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['firstname'].errors &&
+                        fdata['firstname'].errors['required']
+                      "
+                    >
+                      First Name is required *
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['firstname'].errors &&
+                        fdata['firstname'].errors['pattern']
+                      "
+                    >
+                      Enter Correct firstname!
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['firstname'].errors &&
+                        fdata['firstname'].errors['minlength']
+                      "
+                    >
+                      Minimum Length is 2 Character
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['firstname'].errors &&
+                        fdata['firstname'].errors['maxlength']
+                      "
+                    >
+                      Maximum Length is 20 Character
+                    </span>
+                  </span>
+                </mat-form-field>
+                <mat-form-field
+                  appearance="outline"
+                  class="example-full-width m-2 mb-1"
+                >
+                  <input
+                    matInput
+                    placeholder="Last Name"
+                    formControlName="lastname"
+                    [ngModel]="formobj.lastname"
+                  />
+                  <span
+                    class="form-control is-invalid"
+                    *ngIf="
+                      (fdata['lastname'].invalid &&
+                        fdata['lastname'].touched) ||
+                      submit
+                    "
+                  >
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['lastname'].errors &&
+                        fdata['lastname'].errors['required']
+                      "
+                    >
+                      Last Name is required *
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['lastname'].errors &&
+                        fdata['lastname'].errors['pattern']
+                      "
+                    >
+                      Enter Correct lastname!
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['lastname'].errors &&
+                        fdata['lastname'].errors['minlength']
+                      "
+                    >
+                      Minimum Length is 2 Character
+                    </span>
+
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['lastname'].errors &&
+                        fdata['lastname'].errors['maxlength']
+                      "
+                    >
+                      Maximum Length is 20 Character
+                    </span>
+                  </span>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field
+                  appearance="outline"
+                  class="example-full-width m-2 mb-1"
+                >
+                  <input
+                    matInput
+                    placeholder="Email"
+                    formControlName="email"
+                    [ngModel]="formobj.email"
+                  />
+                  <span
+                    class="form-control is-invalid"
+                    *ngIf="
+                      (fdata['email'].invalid && fdata['email'].touched) ||
+                      submit
+                    "
+                  >
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['email'].errors &&
+                        fdata['email'].errors['required']
+                      "
+                    >
+                      Email is required *
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['email'].errors &&
+                        fdata['email'].errors['pattern']
+                      "
+                    >
+                      Enter Correct email!
+                    </span>
+                  </span>
+                </mat-form-field>
+                <mat-form-field
+                  appearance="outline"
+                  class="example-full-width m-2 mb-1"
+                >
+                  <input
+                    matInput
+                    placeholder="Contact Number"
+                    formControlName="number"
+                    [ngModel]="formobj.number"
+                    maxlength="10"
+                  />
+                  <span
+                    class="form-control is-invalid"
+                    *ngIf="
+                      (fdata['number'].invalid && fdata['number'].touched) ||
+                      submit
+                    "
+                  >
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['number'].errors &&
+                        fdata['number'].errors['required']
+                      "
+                    >
+                      Contact Number is required *
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['number'].errors &&
+                        fdata['number'].errors['pattern']
+                      "
+                    >
+                      Enter Correct Number!!
+                    </span>
+                  </span>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field
+                  appearance="outline"
+                  class="example-full-width m-2 mb-1"
+                >
+                  <input
+                    matInput
+                    placeholder="City"
+                    formControlName="city"
+                    [ngModel]="formobj.city"
+                  />
+                  <span
+                    class="form-control is-invalid"
+                    *ngIf="
+                      (fdata['city'].invalid && fdata['city'].touched) || submit
+                    "
+                  >
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['city'].errors && fdata['city'].errors['required']
+                      "
+                    >
+                      City Name is required *
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['city'].errors && fdata['city'].errors['pattern']
+                      "
+                    >
+                      Enter Correct City Name!!
+                    </span>
+                  </span>
+                </mat-form-field>
+                <mat-form-field
+                  appearance="outline"
+                  class="example-full-width m-2 mb-1"
+                >
+                  <input
+                    matInput
+                    placeholder="State"
+                    formControlName="state"
+                    [ngModel]="formobj.state"
+                  />
+                  <span
+                    class="form-control is-invalid"
+                    *ngIf="
+                      (fdata['state'].invalid && fdata['state'].touched) ||
+                      submit
+                    "
+                  >
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['state'].errors &&
+                        fdata['state'].errors['required']
+                      "
+                    >
+                      State Name is required *
+                    </span>
+                    <span
+                      class="danger"
+                      *ngIf="
+                        fdata['state'].errors &&
+                        fdata['state'].errors['pattern']
+                      "
+                    >
+                      Enter Correct State Name!!
+                    </span>
+                  </span>
+                </mat-form-field>
+                <div>
+                  <mat-form-field
+                    appearance="outline"
+                    class="example-full-width m-2 mb-1"
+                  >
+                    <input
+                      matInput
+                      placeholder="Pincode"
+                      formControlName="pincode"
+                      [ngModel]="formobj.pincode"
+                    />
+
+                    <span
+                      class="form-control is-invalid"
+                      *ngIf="
+                        (fdata['pincode'].invalid &&
+                          fdata['pincode'].touched) ||
+                        submit
+                      "
+                    >
+                      <span
+                        class="danger"
+                        *ngIf="
+                          fdata['pincode'].errors &&
+                          fdata['pincode'].errors['required']
+                        "
+                      >
+                        Pincode Is Required *
+                      </span>
+                      <span
+                        class="danger"
+                        *ngIf="
+                          fdata['pincode'].errors &&
+                          fdata['pincode'].errors['pattern']
+                        "
+                      >
+                        Enter Correct Pincode!!
+                      </span>
+                    </span>
+                  </mat-form-field>
+                  <mat-form-field
+                    appearance="outline"
+                    class="example-full-width m-2 mb-1"
+                  >
+                    <textarea
+                      matInput
+                      placeholder="Address"
+                      formControlName="address"
+                      [ngModel]="formobj.address"
+                    ></textarea>
+                    <div
+                      class="form-control is-invalid"
+                      *ngIf="
+                        (fdata['address'].invalid &&
+                          fdata['address'].touched) ||
+                        submit
+                      "
+                    >
+                      <div
+                        class="danger"
+                        *ngIf="
+                          fdata['address'].errors &&
+                          fdata['address'].errors['required']
+                        "
+                      >
+                        Address Is Required *
+                      </div>
+                      <div
+                        class="danger"
+                        *ngIf="
+                          fdata['address'].errors &&
+                          fdata['address'].errors['pattern']
+                        "
+                      >
+                        Enter Correct Address!!
+                      </div>
+                    </div>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <mat-form-field
+                appearance="outline"
+                class="example-full-width m-2 mb-1"
+              >
+                <textarea
+                  matInput
+                  type="text"
+                  placeholder="Summary"
+                  formControlName="summary"
+                  maxlength="1000"
+                  [ngModel]="formobj.summary"
+                ></textarea>
+
+                <span
+                  class="form-control is-invalid"
+                  *ngIf="
+                    (fdata['summary'].invalid && fdata['summary'].touched) ||
+                    submit
+                  "
+                >
+                  <span
+                    class="danger"
+                    *ngIf="
+                      fdata['summary'].errors &&
+                      fdata['summary'].errors['required']
+                    "
+                  >
+                    Summary Is Required *
+                  </span>
+                </span>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="button" class="btn" (click)="updateData()">
+              Update Personal Info
+            </button>
+          </div>
+        </form>
+        <br />
+
+        <!-- //Education -->
+        <button (click)="addDynamicInput()" class="btn">
+          Click Here For Education Update
+        </button>
+        <div
+          *ngFor="let value of dynamicValues; let i = index"
+          class="educationSecond"
+        >
+          <input
+            [(ngModel)]="dynamicValues[i]"
+            name="dynamicInput{{ i }}"
+            placeholder="Enter a value"
+          />
+        </div>
+
+        <button (click)="submitData()" class="submitbtn">Submit</button>
+        <hr />
+        <!-- Experience -->
+        <button (click)="addDynamicInput1()" class="btn">
+          Click Here For Experience Update
+        </button>
+        <div
+          *ngFor="let value of dynamicValues1; let i = index"
+          class="educationSecond"
+        >
+          <input
+            [(ngModel)]="dynamicValues1[i]"
+            name="dynamicInput{{ i }}"
+            placeholder="Enter a value"
+          />
+        </div>
+        <button (click)="expData()" class="submitbtn">Submit</button>
+        <hr />
+        <!-- ----------project---------- -->
+        <button (click)="addDynamicInput2()" class="btn">
+          Click Here For Experience Update
+        </button>
+        <div
+          *ngFor="let value of dynamicValues2; let i = index"
+          class="educationSecond"
+        >
+          <input
+            [(ngModel)]="dynamicValues2[i]"
+            name="dynamicInput{{ i }}"
+            placeholder="Enter a value"
+          />
+        </div>
+
+        <button (click)="prjData()" class="submitbtn">Submit</button>
+        <div class="text-center">
+          <button type="button" class="btn btn1" (click)="updateAllData()">
+            Update My Resume
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col w-auto">
+      <div
+        class="resume container"
+        id="content"
+        #content
+        *ngFor="let u of formData; let i = index"
+      >
+        <div class="resume_left">
+          <div class="resume_content">
+            <div class="resume_item resume_info">
+              <div class="title">
+                <p class="bold">{{ u.firstname }} {{ u.lastname }}</p>
+                <p class="regular">{{ u.current_position }}</p>
+              </div>
+              <ul>
+                <li>
+                  <div>
+                    <i class="fa">&#xf015;</i>
+                  </div>
+                  <div class="data ml-3">
+                    {{ u.address }}
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <i class="fa">&#xf095;</i>
+                  </div>
+                  <div class="data">
+                    {{ u.number }}
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <i class="fa">&#xf0e0;</i>
+                  </div>
+                  <div class="data">
+                    {{ u.email }}
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="resume_item resume_skills">
+              <div class="title">
+                <p class="bold">skill's</p>
+              </div>
+              <ul *ngFor="let uu of u.skills; let i = index">
+                <li>
+                  <div class="skill_name ml-3">
+                    {{ uu.skillname }}
+                  </div>
+                  <div class="skill_progress">
+                    <span *ngIf="uu.ratings == 4" style="width: 80%"></span>
+                    <span *ngIf="uu.ratings == 5" style="width: 100%"></span>
+                    <span *ngIf="uu.ratings == 3" style="width: 60%"></span>
+                    <span *ngIf="uu.ratings == 2" style="width: 40%"></span>
+                    <span *ngIf="uu.ratings == 1" style="width: 20%"></span>
+                  </div>
+                  <div class="skill_per">{{ uu.ratings }}</div>
+                </li>
+              </ul>
+            </div>
+            <div class="resume_item resume_social">
+              <div class="title">
+                <p class="bold">Social</p>
+              </div>
+              <ul *ngFor="let uu of u.social">
+                <li>
+                  <div>
+                    <span *ngIf="uu.medianame == 'LinkedIn'">
+                      <i class="fa">&#xf08c;</i>
+                    </span>
+                    <span *ngIf="uu.medianame == 'Github'">
+                      <i class="fa">&#xf09b;</i>
+                    </span>
+                    <span *ngIf="uu.medianame == 'Twitter'">
+                      <i class="fa">&#xf099;</i>
+                    </span>
+                    <span *ngIf="uu.medianame == 'Facebook'">
+                      <i class="fa">&#xf09a;</i>
+                    </span>
+                  </div>
+                  <div class="data">
+                    <p class="semi-bold">{{ uu.medianame }}</p>
+                    <p>{{ uu.link }}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="resume_right">
+          <div class="resume_item resume_about">
+            <div class="title">
+              <p class="bold">Summary</p>
+            </div>
+            <p>{{ u.summary }}</p>
+          </div>
+          <div class="resume_item resume_work">
+            <div class="title">
+              <p class="bold">Work Experience</p>
+            </div>
+            <ul>
+              <li *ngFor="let exp of u.experience">
+                <div class="date">{{ exp.fromDate }} To {{ exp.toDate }}</div>
+                <div class="info">
+                  <p class="semi-bold">
+                    Organisation Name is {{ exp.organisationName }}
+                  </p>
+                  <p class="semi-bold">{{ exp.current_position }}</p>
+                  <p>Worked on technologies like {{ exp.technologies }}</p>
+                  <p>Current Ctc {{ exp.current_ctc }}</p>
+                  <P>Expected Ctc {{ exp.expected_ctc }}</P>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="resume_item resume_education">
+            <div class="title">
+              <p class="bold">Education</p>
+            </div>
+            <ul>
+              <li *ngFor="let edc of u.education">
+                <div class="date">
+                  {{ edc.edcFromdate }} To {{ edc.edcTodate }}
+                </div>
+                <div class="info">
+                  <p class="semi-bold">
+                    {{ edc.courseName }} ({{ edc.universityName }})
+                  </p>
+                  <p>{{ edc.collegeName }}</p>
+                  <p>OverAll Percentage :{{ edc.percentage }} %</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="resume_item resume_education">
+            <div class="title">
+              <p class="bold">Project</p>
+            </div>
+            <ul>
+              <li *ngFor="let prj of u.project">
+                <div class="date">{{ prj.fromDate }} To {{ prj.toDate }}</div>
+                <div class="info">
+                  <p>Team Size is {{ prj.team_size }}</p>
+                  <p>Project Duration is {{ prj.duration }}</p>
+                  <p class="semi-bold">{{ prj.project_title }}</p>
+                  <p>Project Technologies : {{ prj.project_technology }}</p>
+                  <p>Description :{{ prj.project_description }}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn p-2" (click)="makePdf()">
+          Download
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

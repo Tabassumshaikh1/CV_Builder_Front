@@ -1,0 +1,10 @@
+.btn {
+  background-color: #13ab67;
+  color: whitesmoke;
+}
+.icon-display {
+  transform: scale(2);
+  background-color: #13ab67;
+  border-radius: 10%;
+  color: whitesmoke;
+}

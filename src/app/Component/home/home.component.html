@@ -1,0 +1,256 @@
+<body>
+  <div>
+    <h1 class="text-center fs-1 mt-5 fw-normal">
+      The Resume to Land Your Dream Job
+    </h1>
+    <h2 class="text-center">
+      Create an impressive resume in minutes. Free to download.
+    </h2>
+    <div class="text-center" *ngIf="islogin === false">
+      <button type="button" routerLink="login" class="btn btn-primary p-3 mt-2">
+        Create My Resume Now
+      </button>
+    </div>
+    <div class="text-center" *ngIf="islogin === true">
+      <button
+        type="button"
+        routerLink="userdash"
+        class="btn btn-primary p-3 mt-2"
+      >
+        Create My Resume Now
+      </button>
+    </div>
+    <img
+      src="https://www.cakeresume.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fresume-editor.dde775dc.png&w=1200&q=75"
+      class="rounded mx-auto d-block w-100 mt-5"
+      alt="..."
+    />
+  </div>
+
+  <img
+    src="https://www.cakeresume.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia-coverage.3d8442a9.png&w=1080&q=75"
+    class="rounded mx-auto d-block w-75 mt-3"
+  />
+  <div class="row mt-5 d-flex justify-content-around">
+    <div class="col-sm-6 d-flex justify-content-around">
+      <div class="card h-auto w-75">
+        <img
+          src="https://www.cakeresume.com/_next/static/media/quote.1dec497c.svg"
+          class="card-img-top cardimg"
+          alt="..."
+        />
+        <div class="card-body">
+          <p class="card-text">
+            CakeResume is a fantastic tool to build your CV. It is fast, easy to
+            use and you can choose among different stunning design templates!
+            Super!
+          </p>
+          <hr />
+          <div class="d-flex flex-row">
+            <div class="p-2">
+              <img
+                class="cardimgs"
+                src="https://www.cakeresume.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fv2-avatar-chiara-de-caro.399d7c62.png&w=64&q=75"
+              />
+            </div>
+            <div class="pt-3">
+              <h3>
+                Chiara de Caro
+                <br />
+                <h5>Team Lead · Online Marketing Manager</h5>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card h-auto w-75">
+        <img
+          src="https://www.cakeresume.com/_next/static/media/quote.1dec497c.svg"
+          class="card-img-top cardimg"
+          alt="..."
+        />
+        <div class="card-body">
+          <p class="card-text">
+            CakeResume is responsible for my most beautiful resume. My best job
+            leads praised my eye for design based solely on my resume. Template
+            ! Super !
+          </p>
+          <hr />
+
+          <div class="d-flex flex-row">
+            <div class="p-2">
+              <img
+                class="cardimgs"
+                src="https://www.cakeresume.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fv2-avatar-patrick-dobson.f3e0b0c8.png&w=64&q=75"
+              />
+            </div>
+            <div class="pt-3">
+              <h3>
+                Patrick Dobson
+
+                <br />
+                <h5>Full-Stack Web Developer</h5>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-around mt-5 mb-4">
+    <div class="col-sm-6 d-flex justify-content-around mb-4">
+      <div class="card h-auto w-75">
+        <img
+          src="https://www.cakeresume.com/_next/static/media/quote.1dec497c.svg"
+          class="card-img-top cardimg"
+          alt="..."
+        />
+        <div class="card-body">
+          <p class="card-text">
+            CakeResume helped me fit all of my experience, publications, and
+            awards concisely onto my resume in a clean and visually appealing
+            way.
+          </p>
+          <hr />
+          <div class="d-flex flex-row">
+            <div class="p-2">
+              <img
+                class="cardimgs"
+                src="https://www.cakeresume.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fv2-avatar-benjamin-attia.bb4d7cde.png&w=64&q=75"
+              />
+            </div>
+            <div class="pt-3">
+              <h3>
+                Benjamin Attia
+                <br />
+                <h5>Research Associate</h5>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+      <div class="card h-auto w-75">
+        <img
+          src="https://www.cakeresume.com/_next/static/media/quote.1dec497c.svg"
+          class="card-img-top cardimg"
+          alt="..."
+        />
+        <div class="card-body">
+          <p class="card-text">
+            CakeResume makes it easy to set up a well designed and polished
+            resume. I’ve recommended it to friends due to its ease of use and
+            it’s fun to see it come together.
+          </p>
+          <hr />
+          <div class="d-flex flex-row">
+            <div class="p-2">
+              <img
+                class="cardimgs"
+                src="https://www.cakeresume.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fv2-avatar-christy-lee.46666673.png&w=64&q=75"
+              />
+            </div>
+            <div class="pt-3">
+              <h3>
+                Christy Lee
+                <br />
+                <h5>Research Associate</h5>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="Footer_footer__Bg7Ch">
+    <div class="row">
+      <div class="col-sm-6 Footer_footerContainer__BVcdW">
+        <div
+          class="col-sm-6 d-flex justify-content-around mt-4 Footer_footerColumn__YPgYU"
+        >
+          <div class="Footer_footerSection__uxv0r">
+            <h3 class="Footer_footerSectionTitle__AMzL3">Company</h3>
+            <ul class="Footer_footerSectionItems__NCY4b">
+              <li class="Footer_footerSectionItem__VylRD">
+                <a href="https://www.cakeresume.com/about">About</a>
+              </li>
+              <li class="Footer_footerSectionItem__VylRD">
+                <a href="https://www.cakeresume.com/pricing"
+                  >Resume Builder Pricing Plans</a
+                >
+              </li>
+              <li class="Footer_footerSectionItem__VylRD">
+                <a href="https://www.cakeresume.com/job-posting-pricing"
+                  >Job Posting Pricing Plans</a
+                >
+              </li>
+              <li class="Footer_footerSectionItem__VylRD">
+                <a href="https://www.cakeresume.com/talent-search-pricing"
+                  >Talent Search Pricing Plans</a
+                >
+              </li>
+              <li class="Footer_footerSectionItem__VylRD">
+                <a
+                  href="https://www.dropbox.com/sh/f0f09vz60yp5r0i/AABY4BaIA31Mqbz53S-GiJZza?dl=0&amp;lst="
+                  >Press Kit</a
+                >
+              </li>
+              <li class="Footer_footerSectionItem__VylRD">
+                <a href="https://help.cakeresume.com/support/tickets/new"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="Footer_footerSectionItem__VylRD">
+                <a href="https://www.cakeresume.com/terms-of-service"
+                  >Terms of Service</a
+                >
+              </li>
+              <li class="Footer_footerSectionItem__VylRD">
+                <a href="https://www.cakeresume.com/privacy-policy"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+            <div class="Footer_footerCopyright__RMmLp">© 2023 CakeResume</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 mt-4 Footer_footerColumn__YPgYU">
+        <div class="Footer_footerSection__uxv0r">
+          <h3 class="Footer_footerSectionTitle__AMzL3">Solutions</h3>
+          <ul class="Footer_footerSectionItems__NCY4b">
+            <li class="Footer_footerSectionItem__VylRD">
+              <a href="https://www.cakeresume.com">Resume Builder</a>
+            </li>
+            <li class="Footer_footerSectionItem__VylRD">
+              <a href="https://www.cakeresume.com/online-portfolio"
+                >Portfolio Maker</a
+              >
+            </li>
+            <li class="Footer_footerSectionItem__VylRD">
+              <a href="https://www.cakeresume.com/job-posting"
+                >Job Posting – Get Started for Free</a
+              >
+            </li>
+            <li class="Footer_footerSectionItem__VylRD">
+              <a href="/search">Talent Search</a>
+            </li>
+            <li class="Footer_footerSectionItem__VylRD">
+              <a href="https://www.cakeresume.com/recruitment-service"
+                >Recruitment Services</a
+              >
+            </li>
+            <li class="Footer_footerSectionItem__VylRD">
+              <a href="/employer-branding">Employer Branding</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>

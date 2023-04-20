@@ -1,0 +1,43 @@
+<div class="text-end">
+  <button class="btncreate m-4 p-3" (click)="myresume()">Create Resume</button>
+</div>
+
+<div class="card container center">
+  <table class="table w-100">
+    <thead>
+      <tr>
+        <th class="w-25"><span>Full Name</span></th>
+        <th class="w-25"><span>Created Date</span></th>
+
+        <th class="w-25"><span>Action</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      a
+      <tr *ngFor="let u of data">
+        <td class="w-25">{{ u.firstname }} {{ u.lastname }}</td>
+        <td class="w-25">
+          <p class="btn btn alert-success">
+            {{ u.created_at | date : "yyyy-MM-dd hh:mm:ss" }}
+          </p>
+        </td>
+
+        <td class="w-25">
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-success m-1" (click)="viewresume(u._id)">
+                View
+              </button>
+              <button class="btn btn-primary m-1" (click)="updateresume(u._id)">
+                Update
+              </button>
+              <button class="btn btn-danger m-1" (click)="deleteresume(u._id)">
+                Delete
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

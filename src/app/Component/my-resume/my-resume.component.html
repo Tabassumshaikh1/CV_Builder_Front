@@ -1,0 +1,839 @@
+<div class="container">
+  <button type="button" class="btn btn1" (click)="backbtn()">Go Back</button>
+</div>
+<div class="container">
+  <h1 class="text-center mb-5">Create Resume From Here....</h1>
+  <form [formGroup]="myForm">
+    <div class="row d-flex justify-content-around">
+      <div class="col mr-4">
+        <h4>1. Basic Information</h4>
+        <div class="example-container">
+          <mat-form-field
+            appearance="outline"
+            class="example-full-width m-2 mb-1"
+          >
+            <input
+              matInput
+              placeholder="First Name"
+              formControlName="firstname"
+            />
+
+            <span
+              class="form-control is-invalid"
+              *ngIf="
+                (fdata['firstname'].invalid && fdata['firstname'].touched) ||
+                submit ||
+                submit
+              "
+            >
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['firstname'].errors &&
+                  fdata['firstname'].errors['required']
+                "
+              >
+                First Name is required *
+              </span>
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['firstname'].errors &&
+                  fdata['firstname'].errors['pattern']
+                "
+              >
+                Enter Correct firstname!
+              </span>
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['firstname'].errors &&
+                  fdata['firstname'].errors['minlength']
+                "
+              >
+                Minimum Length is 2 Character
+              </span>
+
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['firstname'].errors &&
+                  fdata['firstname'].errors['maxlength']
+                "
+              >
+                Maximum Length is 20 Character
+              </span>
+            </span>
+          </mat-form-field>
+          <mat-form-field
+            appearance="outline"
+            class="example-full-width m-2 mb-1"
+          >
+            <input
+              matInput
+              placeholder="Last Name"
+              formControlName="lastname"
+              [ngClass]="{
+                'is-invalid': fdata.lastname.errors
+              }"
+            />
+
+            <span
+              class="form-control is-invalid"
+              *ngIf="
+                (fdata['lastname'].invalid && fdata['lastname'].touched) ||
+                submit
+              "
+            >
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['lastname'].errors &&
+                  fdata['lastname'].errors['required']
+                "
+              >
+                Last Name is required *
+              </span>
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['lastname'].errors &&
+                  fdata['lastname'].errors['pattern']
+                "
+              >
+                Enter Correct lastname!
+              </span>
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['lastname'].errors &&
+                  fdata['lastname'].errors['minlength']
+                "
+              >
+                Minimum Length is 2 Character
+              </span>
+
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['lastname'].errors &&
+                  fdata['lastname'].errors['maxlength']
+                "
+              >
+                Maximum Length is 20 Character
+              </span>
+            </span>
+          </mat-form-field>
+          <mat-form-field
+            appearance="outline"
+            class="example-full-width m-2 mb-1"
+          >
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              [ngClass]="{
+                'is-invalid': fdata.email.errors
+              }"
+            />
+
+            <span
+              class="form-control is-invalid"
+              *ngIf="
+                (fdata['email'].invalid && fdata['email'].touched) || submit
+              "
+            >
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['email'].errors && fdata['email'].errors['required']
+                "
+              >
+                Email is required *
+              </span>
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['email'].errors && fdata['email'].errors['pattern']
+                "
+              >
+                Enter Correct email!
+              </span>
+            </span>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field
+            appearance="outline"
+            class="example-full-width m-2 mb-1"
+          >
+            <input
+              matInput
+              placeholder="Contact Number"
+              formControlName="number"
+              maxlength="10"
+            />
+
+            <span
+              class="form-control is-invalid"
+              *ngIf="
+                (fdata['number'].invalid && fdata['number'].touched) || submit
+              "
+            >
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['number'].errors && fdata['number'].errors['required']
+                "
+              >
+                Contact Number is required *
+              </span>
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['number'].errors && fdata['number'].errors['pattern']
+                "
+              >
+                Enter Correct Number!!
+              </span>
+            </span>
+          </mat-form-field>
+          <mat-form-field
+            appearance="outline"
+            class="example-full-width m-2 mb-1"
+          >
+            <input
+              matInput
+              placeholder="City"
+              formControlName="city"
+              [ngClass]="{
+                'is-invalid': fdata.city.errors
+              }"
+            />
+            <span
+              class="form-control is-invalid"
+              *ngIf="(fdata['city'].invalid && fdata['city'].touched) || submit"
+            >
+              <span
+                class="danger"
+                *ngIf="fdata['city'].errors && fdata['city'].errors['required']"
+              >
+                City Name is required *
+              </span>
+              <span
+                class="danger"
+                *ngIf="fdata['city'].errors && fdata['city'].errors['pattern']"
+              >
+                Enter Correct City Name!!
+              </span>
+            </span>
+          </mat-form-field>
+          <mat-form-field
+            appearance="outline"
+            class="example-full-width m-2 mb-1"
+          >
+            <input
+              matInput
+              placeholder="State"
+              formControlName="state"
+              [ngClass]="{
+                'is-invalid': fdata.state.errors
+              }"
+            />
+            <span
+              class="form-control is-invalid"
+              *ngIf="
+                (fdata['state'].invalid && fdata['state'].touched) || submit
+              "
+            >
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['state'].errors && fdata['state'].errors['required']
+                "
+              >
+                State Name is required *
+              </span>
+              <span
+                class="danger"
+                *ngIf="
+                  fdata['state'].errors && fdata['state'].errors['pattern']
+                "
+              >
+                Enter Correct State Name!!
+              </span>
+            </span>
+          </mat-form-field>
+        </div>
+        <div>
+          <div>
+            <mat-form-field
+              appearance="outline"
+              class="example-full-width m-2 mb-1"
+            >
+              <input
+                matInput
+                placeholder="Pincode"
+                formControlName="pincode"
+                [ngClass]="{
+                  'is-invalid': fdata.pincode.errors
+                }"
+              />
+              <span
+                class="form-control is-invalid"
+                *ngIf="
+                  (fdata['pincode'].invalid && fdata['pincode'].touched) ||
+                  submit
+                "
+              >
+                <span
+                  class="danger"
+                  *ngIf="
+                    fdata['pincode'].errors &&
+                    fdata['pincode'].errors['required']
+                  "
+                >
+                  Pincode Is Required *
+                </span>
+                <span
+                  class="danger"
+                  *ngIf="
+                    fdata['pincode'].errors &&
+                    fdata['pincode'].errors['pattern']
+                  "
+                >
+                  Enter Correct Pincode!!
+                </span>
+              </span>
+            </mat-form-field>
+            <mat-form-field
+              appearance="outline"
+              class="example-full-width m-2 mb-1"
+            >
+              <textarea
+                matInput
+                placeholder="Address"
+                formControlName="address"
+                [ngClass]="{
+                  'is-invalid': fdata.address.errors
+                }"
+              ></textarea>
+
+              <div
+                class="form-control is-invalid"
+                *ngIf="
+                  (fdata['address'].invalid && fdata['address'].touched) ||
+                  submit
+                "
+              >
+                <div
+                  class="danger"
+                  *ngIf="
+                    fdata['address'].errors &&
+                    fdata['address'].errors['required']
+                  "
+                >
+                  Address Is Required *
+                </div>
+                <div
+                  class="danger"
+                  *ngIf="
+                    fdata['address'].errors &&
+                    fdata['address'].errors['pattern']
+                  "
+                >
+                  Enter Correct Address!!
+                </div>
+              </div>
+            </mat-form-field>
+            <mat-form-field
+              appearance="outline"
+              class="example-full-width m-2 mb-1"
+            >
+              <textarea
+                matInput
+                type="text"
+                placeholder="Add yourSummary"
+                formControlName="summary"
+                maxlength="1000"
+                [ngClass]="{
+                  'is-invalid': fdata.summary.errors
+                }"
+              ></textarea>
+
+              <span
+                class="form-control is-invalid"
+                *ngIf="
+                  (fdata['summary'].invalid && fdata['summary'].touched) ||
+                  submit
+                "
+              >
+                <span
+                  class="danger"
+                  *ngIf="
+                    fdata['summary'].errors &&
+                    fdata['summary'].errors['required']
+                  "
+                >
+                  Summary Is Required *
+                </span>
+              </span>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h4>2. Education Information</h4>
+      <!-- Dynamic -->
+      <form [formGroup]="educationDetails" (ngSubmit)="edcSubmit()">
+        <table class="table table-bordered" formArrayName="edc">
+          <tr>
+            <th colspan="2">Add Education Details From Here:</th>
+            <th width="150px">
+              <button
+                type="button"
+                (click)="addEducation()"
+                class="btn btn-primary text-primary"
+              >
+                Add
+              </button>
+            </th>
+          </tr>
+          <tr
+            *ngFor="let quantity of edc().controls; let i = index"
+            [formGroupName]="i"
+          >
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <td class="w-25">
+                    Course Name :
+                    <input
+                      type="text"
+                      formControlName="courseName"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    University Name :
+                    <input
+                      type="text"
+                      formControlName="universityName"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    College Name:
+                    <input
+                      type="text"
+                      formControlName="collegeName"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <td class="w-25">
+                    Percentage:
+                    <input
+                      type="text"
+                      formControlName="percentage"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    From Date:
+                    <input
+                      type="date"
+                      formControlName="edcFromdate"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    To Date:
+                    <input
+                      type="date"
+                      formControlName="edcTodate"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+              </div>
+            </div>
+            <td>
+              <button
+                (click)="removeEducation(i)"
+                class="btn btn-danger text-primary"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        </table>
+        <button type="submit" class="btn btn-success">Add Education</button>
+      </form>
+    </div>
+    <hr />
+    <!-- =========================================Exp -->
+    <div>
+      <h4>3. Experience Details</h4>
+      <!-- Dynamic -->
+      <form [formGroup]="experienceDetails" (ngSubmit)="expSubmit()">
+        <table class="table table-bordered" formArrayName="exp">
+          <tr>
+            <th colspan="2">Add Experience Details From Here:</th>
+            <th width="150px">
+              <button
+                type="button"
+                (click)="addExp()"
+                class="btn btn-primary text-primary"
+              >
+                Add
+              </button>
+            </th>
+          </tr>
+          <tr
+            *ngFor="let quantity of exp().controls; let i = index"
+            [formGroupName]="i"
+          >
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <td class="w-25">
+                    Organisation Name:
+                    <input
+                      type="text"
+                      formControlName="organisationName"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    Joining Location:
+                    <input
+                      type="text"
+                      formControlName="joining_location"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    Current Position:
+                    <input
+                      type="text"
+                      formControlName="current_position"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <td class="w-25">
+                    Current Ctc:
+                    <input
+                      type="number"
+                      formControlName="current_ctc"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    Expected Ctc:
+                    <input
+                      type="text"
+                      formControlName="expected_ctc"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    Joining Date:
+                    <input
+                      type="date"
+                      formControlName="fromDate"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+              </div>
+              <div class="row">
+                <td class="w-25">
+                  Leaving Date:
+                  <input
+                    type="date"
+                    formControlName="toDate"
+                    class="form-control"
+                  />
+                </td>
+                <div class="col w-25">
+                  <td>
+                    Technologies Worked On:
+                    <input
+                      type="text"
+                      formControlName="technologies"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+              </div>
+            </div>
+            <td>
+              <button
+                (click)="removeExp(i)"
+                class="btn btn-danger text-primary"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        </table>
+        <button type="submit" class="btn btn-success">Add Experience</button>
+      </form>
+    </div>
+    <hr />
+    <!-- =====================Project -->
+    <div class="col">
+      <h4>4. Project Details</h4>
+      <!-- Dynamic -->
+      <form [formGroup]="projectDetails" (ngSubmit)="prjctSubmit()">
+        <table class="table table-bordered" formArrayName="prjct">
+          <tr>
+            <th colspan="2">Add Project Details From Here:</th>
+            <th width="150px">
+              <button
+                type="button"
+                (click)="addPrjct()"
+                class="btn btn-primary text-primary"
+              >
+                Add
+              </button>
+            </th>
+          </tr>
+          <tr
+            *ngFor="let quantity of prjct().controls; let i = index"
+            [formGroupName]="i"
+          >
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <td class="w-25">
+                    Project Title:
+                    <input
+                      type="text"
+                      formControlName="project_title"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    Project Duration In Months:
+                    <input
+                      type="number"
+                      formControlName="duration"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    Project Team Size:
+                    <input
+                      type="number"
+                      formControlName="team_size"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <td class="w-25">
+                    Project Technology:
+                    <input
+                      type="text"
+                      formControlName="project_technology"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    Project Description:
+                    <input
+                      type="text"
+                      formControlName="project_description"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+                <div class="col">
+                  <td class="w-25">
+                    Start From Date:
+                    <input
+                      type="date"
+                      formControlName="fromDate"
+                      class="form-control"
+                    />
+                  </td>
+                  <td>
+                    End From Date:
+                    <input
+                      type="date"
+                      formControlName="toDate"
+                      class="form-control"
+                    />
+                  </td>
+                </div>
+              </div>
+            </div>
+
+            <td>
+              <button
+                (click)="removePrjct(i)"
+                class="btn btn-danger text-primary"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        </table>
+
+        <button type="submit" class="btn btn-success">Add Projects</button>
+      </form>
+    </div>
+
+    <hr />
+    <div class="row">
+      <div class="col">
+        <h4>5. Skills</h4>
+        <div class="container">
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <table class="table table-bordered" formArrayName="quantities">
+              <tr>
+                <th colspan="2">Add Skills From Here:</th>
+                <th width="150px">
+                  <button
+                    type="button"
+                    (click)="addQuantity()"
+                    class="btn btn-primary text-primary"
+                  >
+                    Add
+                  </button>
+                </th>
+              </tr>
+              <tr
+                *ngFor="let quantity of quantities().controls; let i = index"
+                [formGroupName]="i"
+              >
+                <td>
+                  Name :
+                  <input
+                    type="text"
+                    formControlName="skillname"
+                    class="form-control"
+                  />
+                </td>
+                <td>
+                  Rate from 1-5:
+                  <input
+                    type="text"
+                    formControlName="ratings"
+                    class="form-control"
+                  />
+                </td>
+                <td>
+                  <button
+                    (click)="removeQuantity(i)"
+                    class="btn btn-danger text-primary"
+                  >
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            </table>
+
+            <button type="submit" class="btn btn-success">Add Skills</button>
+          </form>
+          <br />
+        </div>
+      </div>
+      <div class="col">
+        <h4>6. Social Profile Links</h4>
+        <div class="container">
+          <form [formGroup]="productForm1" (ngSubmit)="onSubmit1()">
+            <table class="table table-bordered" formArrayName="sociallink">
+              <tr>
+                <th colspan="2">Add Social Links From Here:</th>
+                <th width="150px">
+                  <button
+                    type="button"
+                    (click)="addQuantity1()"
+                    class="btn btn-primary text-primary"
+                  >
+                    Add
+                  </button>
+                </th>
+              </tr>
+              <tr
+                *ngFor="let quantity of sociallink().controls; let i = index"
+                [formGroupName]="i"
+              >
+                <td>
+                  Name :
+                  <input
+                    type="text"
+                    formControlName="medianame"
+                    class="form-control"
+                  />
+                </td>
+                <td>
+                  Link:
+                  <input
+                    type="text"
+                    formControlName="link"
+                    class="form-control"
+                  />
+                </td>
+                <td>
+                  <button
+                    (click)="removeQuantity1(i)"
+                    class="btn btn-danger text-primary"
+                  >
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            </table>
+            <button type="submit" class="btn btn-success">
+              Add Social Links
+            </button>
+          </form>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn1" (click)="postData()">
+        Create My Resume
+      </button>
+    </div>
+  </form>
+</div>
+<hr />
